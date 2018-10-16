@@ -184,7 +184,7 @@ div {
       font-family: "FontAwesome";
       content: "\f07c";
       padding-right: 0.3em; }
-    .post .post-meta #busuanzi_value_page_pv:before {
+    .post .post-meta .busuanzi_value_page_pv:before {
       font-family: "FontAwesome";
       content: "\f024";
       padding-right: 0.3em; }
