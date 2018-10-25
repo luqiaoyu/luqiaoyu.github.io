@@ -5,6 +5,19 @@
 <li><code>a = (1,)</code>：<code>a</code>是一个<code>tuple</code>，长度为1，即<code>len(a) = 1</code>。<code>,</code>的存在是为了表示这是一个<code>tuple</code>，与<code>(1)</code>表示优先级相区分。</li>
 <li><code>Python</code>的传参方式是引用传递。所有的<code>Python</code>变量（variable）都是一个引用（reference），指向真正的对象（object）。</li>
 <li><code>Java</code>，<code>C++</code>中的<code>?:</code>三元运算符，在<code>Python</code>中不存在，<code>Python</code>中可以用<code>if else</code>等价实现，例如：<code>a = 0 if flag == True else 1</code></li>
+<li>Immutable sequences: <code>tuple</code>, <code>str</code>, <code>bytes</code></li>
+<li>Set elements must be hashable. The <code>set</code> type is not hashable, but <code>frozenset</code> is, so you can have <code>frozenset</code> elements inside a <code>set</code>.</li>
+<li><p><code>list</code>的<code>reverse</code>方法和<code>[::-1]</code>的区别：</p>
+<p><code>reverse</code> reverses the list in-place, see the <a href="https://docs.python.org/3/tutorial/datastructures.html" target="_blank" rel="noopener">manual</a>, while <code>[::-1]</code> gives a new list in reversed order.</p>
+<p>Note that if you don’t actually need a list with the values in the reverse order (just an iterable), using the <code>reversed</code> builtin function can be more efficient. Something like for value in <code>reversed(p)</code> doesn’t add a significant amount of overhead (when compared with any other iteration). <code>p[::-1]</code> and <code>p.reverse()</code> are both <code>O(N)</code>, but <code>reversed(p)</code> is <code>O(1)</code>. Of course iterating on it is <code>O(N)</code>, but so is iterating on <code>p</code> without reversing.</p>
+</li>
+<li><p>关于<code>dict</code>：</p>
+<p><code>d[k]</code> raises an error when <code>k</code> is not an existing key</p>
+<p><code>d.get(k, default)</code> returns <code>default</code> when <code>k</code> is not an existing key</p>
+<p><code>d.setdefault(k, default)</code> sets <code>d[k] = default</code> and returns <code>default</code> when <code>k</code> is not an existing key</p>
+<p><code>d = collections.defaultdict(callable)</code> sets <code>d[k] = callable()</code> and returns <code>d[k]</code> when <code>k</code> is not an existing key, e.g. <code>callable = list</code></p>
+<p>subclass <code>dict</code> or other mapping types: the <code>__missing__</code> method</p>
+</li>
 </ol>
 <h3 id="Python2和Python3的一些区别"><a href="#Python2和Python3的一些区别" class="headerlink" title="Python2和Python3的一些区别"></a><code>Python2</code>和<code>Python3</code>的一些区别</h3><ol>
 <li><code>Python2</code>中有<code>xrange</code>和<code>range</code>两种；<code>Python3</code>中仅有<code>range</code>，等同于<code>Python2</code>中的<code>xrange</code>。<br>e.g.</li>
