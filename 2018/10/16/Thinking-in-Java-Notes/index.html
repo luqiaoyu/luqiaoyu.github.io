@@ -21,19 +21,77 @@
 <p>对象导论</p>
 <p>介绍OOP的基本概念</p>
 <p>Keys:</p>
+<ul>
+<li>In a good object-oriented design, each object does one thing well, but doesn’t try to do too much. (-&gt; high cohesion)</li>
+<li><code>public</code>: everyone; <code>private</code>: methods inside class; <code>protected</code>: methods inside class and inheriting class; default/package: inside the same package.</li>
+<li><strong>Inheritance:</strong> When you inherit from an existing type, you create a new type. <em>This new type contains not only all the members of the existing type (although the private ones are hidden away and inaccessible), but more importantly it duplicates the interface of the base class.</em> That is, all the messages you can send to objects of the base class you can also send to objects of the derived class. Since we know the type of a class by the messages we can send to it, <em>this means that the derived class is the same type as the base class. In the previous example</em>, “A circle is a shape.” <em>This type equivalence via inheritance is one of the fundamental gateways in understanding the meaning of object-oriented programming.</em></li>
+<li><strong>Polymorphism:</strong> <em>late binding</em>: When you send a message to an object, the code being called isn’t determined until run time. </li>
+<li><strong>Polymorphism:</strong> In Java, <strong>dynamic binding</strong> is the <strong>default</strong> behavior and you don’t need to remember to add any extra keywords in order to get polymorphism. C++ uses the <code>virtual</code> keyword to do this.</li>
+<li><strong>Polymorphism:</strong> upcasting 向上转型: We call this process of treating a derived type as though it were its base type upcasting. </li>
+<li><strong>The singly rooted hierarchy:</strong> One of the issues in OOP that has become especially prominent since the introduction of C++ is whether all classes should ultimately be inherited from a single base class. In Java (as with virtually all other OOP languages except for C++) the answer is yes, and the name of this ultimate base class is simply <code>Object</code>. (Java是单根继承结构，C++不是)</li>
+<li><p><strong>The singly rooted hierarchy:</strong> 单根继承结构的好处是</p>
+<ul>
+<li>保证所有对象都具备某些功能</li>
+<li>使garbage collector(垃圾回收器)的实现变得容易很多</li>
+</ul>
+</li>
+<li><p><strong>Object creation &amp; lifetime:</strong> </p>
+<ul>
+<li>C++: 为了追求最大的运行速度，对象的存储空间和生命周期可以在编写程序时确定，这可以通过将对象置于栈（自动变量 automatic variable 或限域变量 scoped variable）或静态存储区域来实现</li>
+<li><p>Java: 动态内存分配方式 dynamic memory allocation：在被称为堆（heap）的内存池中动态地创建对象</p>
+<p>The dynamic approach makes the generally logical assumption that objects tend to be complicated, so the extra overhead of finding storage and releasing that storage will not have an important impact on the creation of an object. In addition, the greater flexibility is essential to solve the general programming problem.</p>
+</li>
+</ul>
+</li>
+<li><strong>Concurrent programming:</strong> lock</li>
+<li><strong>Java and the Internet:</strong> Java 于互联网: The basic concept of client/server computing, then, is not so complicated. The problems arise because you have a single server trying to serve many clients at once. <ul>
+<li>数据库管理系统，数据分布</li>
+<li>事务处理 transaction processing</li>
+<li>跨平台（操作系统）</li>
+<li>中间件 middleware : 高并发，低延迟</li>
+</ul>
+</li>
+<li><strong>Java and the Internet:</strong> Motivation for client programming: 构建于CGI (Common Gateway Interface)程序的网站面临以下问题：<ul>
+<li>难以维护</li>
+<li>响应时间：取决于传输数据量，服务器和网络的负荷（CGI程序启动也慢）</li>
+</ul>
+</li>
+<li><strong>Java and the Internet:</strong> an overview of the issues and approaches in client-side programming<ul>
+<li>plug-ins 插件</li>
+<li>script languages 脚本语言</li>
+<li>Java:  Java allows client-side programming via the applet and with Java Web Start. (Alternatives)</li>
+<li>.Net and C#: JVM和Java的有力竞争者，最大的问题是跨平台可移植性还未实现</li>
+<li>Internet vs. intranet</li>
+</ul>
+</li>
+<li><strong>Java and the Internet:</strong> Server-side programming: <ul>
+<li>服务端编程是Java取得巨大成功的因素之一</li>
+<li>servlet and JSP</li>
+<li>Server-side programming topics are covered in <em>Thinking in Enterprise Java</em> at <a href="http://www.MindView.net" target="_blank" rel="noopener">www.MindView.net</a>.</li>
+</ul>
+</li>
+<li>You know what a procedural program looks like: data definitions and function calls.</li>
+<li>OOP and Java may not be for everyone. </li>
+</ul>
 <p>Contents:</p>
 <ul>
 <li>The progress of abstraction</li>
 <li>An object has an interface</li>
 <li>An object provides services</li>
-<li>The hidden implementation</li>
-<li>Reusing the implementation</li>
-<li>Inheritance</li>
-<li>Is-a vs. is-like-a relationships</li>
-<li>Interchangeable objects with polymorphism</li>
-<li>The singly rooted hierarchy</li>
-<li>Containers</li>
+<li>The hidden implementation  封装</li>
+<li>Reusing the implementation  组合和聚合</li>
+<li>Inheritance  继承</li>
+<li>Is-a vs. is-like-a relationships  两种继承关系</li>
+<li>Interchangeable objects with polymorphism  多态</li>
+<li>The singly rooted hierarchy  单根继承结构</li>
+<li>Containers  容器<ul>
+<li>Parameterized types (generics)  范型</li>
+</ul>
+</li>
 <li>Object creation &amp; lifetime</li>
+<li>Exception handling: dealing with errors</li>
+<li>Concurrent programming</li>
+<li>Java and the Internet</li>
 </ul>
 </li>
 <li>Everything Is an Object</li>
@@ -63,6 +121,15 @@
 <h1 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q &amp; A"></a>Q &amp; A</h1><ol>
 <li><p>What’s OOP? Some fundamental concepts?</p>
 <p><strong>Answer:</strong> </p>
+<p>An object has state, behavior and identity.</p>
+<ul>
+<li>Everything is an object.</li>
+<li>A program is a bunch of objects telling each other what to do by sending messages. </li>
+<li>Each object has its own memory made up of other objects. </li>
+<li>Every object has a type. </li>
+<li>All objects of a particular type can receive the same messages. </li>
+</ul>
+<p>composition, inheritance, polymorphism</p>
 </li>
 <li><p>Some fundamental concepts of <code>Java</code>?</p>
 <p><strong>Answer:</strong> </p>
@@ -84,5 +151,6 @@
 <h2 id="Conjunctions"><a href="#Conjunctions" class="headerlink" title="Conjunctions"></a>Conjunctions</h2><ul>
 <li>for a time : 一度；暂时；一段时间</li>
 <li>more than anything : 最重要的是</li>
+<li>Ordinarily : 通常地；一般地</li>
 </ul>
 </div><div class="tags"><a href="/tags/java/">java</a><a href="/tags/book/">book</a></div><div class="post-nav"><a class="next" href="/2018/10/16/Programming-Language-Memo/">Programming Language Memo</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="https://luqiaoyu.github.io"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/java/" style="font-size: 15px;">java</a> <a href="/tags/book/" style="font-size: 15px;">book</a> <a href="/tags/syntax/" style="font-size: 15px;">syntax</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/c/" style="font-size: 15px;">c++</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/Thinking-in-Java-Notes/">Thinking in Java Notes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/16/Programming-Language-Memo/">Programming Language Memo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/12/相信未来/">相信未来</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/11/hello-world/">Hello World</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Qiaoyu Lu.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
