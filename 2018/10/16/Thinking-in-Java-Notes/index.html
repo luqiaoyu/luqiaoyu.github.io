@@ -24,7 +24,7 @@
 <li>In a good object-oriented design, each object does one thing well, but doesn’t try to do too much. (-&gt; high cohesion)</li>
 <li><code>public</code>: everyone; <code>private</code>: methods inside class; <code>protected</code>: methods inside class and inheriting class; default/package: inside the same package.</li>
 <li><strong>Inheritance:</strong> When you inherit from an existing type, you create a new type. <strong>This new type contains not only all the members of the existing type (although the private ones are hidden away and inaccessible), but more importantly it duplicates the interface of the base class.</strong> That is, all the messages you can send to objects of the base class you can also send to objects of the derived class. Since we know the type of a class by the messages we can send to it, <strong>this means that the derived class is the same type as the base class. In the previous example</strong>, “A circle is a shape.” <strong>This type equivalence via inheritance is one of the fundamental gateways in understanding the meaning of object-oriented programming.</strong></li>
-<li><strong>Polymorphism:</strong> <em>late binding</em>: When you send a message to an object, the code being called isn’t determined until run time. </li>
+<li><strong>Polymorphism:</strong> <strong>late binding</strong>: When you send a message to an object, the code being called isn’t determined until run time. </li>
 <li><strong>Polymorphism:</strong> In Java, <strong>dynamic binding</strong> is the <strong>default</strong> behavior and you don’t need to remember to add any extra keywords in order to get polymorphism. C++ uses the <code>virtual</code> keyword to do this.</li>
 <li><strong>Polymorphism:</strong> upcasting 向上转型: We call this process of treating a derived type as though it were its base type upcasting. </li>
 <li><strong>The singly rooted hierarchy:</strong> One of the issues in OOP that has become especially prominent since the introduction of C++ is whether all classes should ultimately be inherited from a single base class. In Java (as with virtually all other OOP languages except for C++) the answer is yes, and the name of this ultimate base class is simply <code>Object</code>. (Java是单根继承结构，C++不是)</li>
@@ -95,13 +95,78 @@
 </ul>
 </li>
 <li><p>Everything Is an Object</p>
-<p>一切都是对象</p>
+<p>一切都是对象：Overview of the language and some of its basic ideas</p>
 <ul>
-<li></li>
+<li><strong>You manipulate objects with references</strong><ul>
+<li>In Java, you treat everything as an object, using a single consistent syntax. Although you treat everything as an object, the identifier you manipulate is actually a “reference” to an object.</li>
+<li>That is, just because you have a reference doesn’t mean there’s necessarily an object connected to it. A safer practice, then, is always to initialize a reference when you create it.</li>
 </ul>
 </li>
-<li><p>Operators</p>
+<li><strong>You must create all the objects</strong><ul>
+<li>There are five different places to store data: 1) Registers; 2) The stack (object references); 3) The heap (objects); 4) Constant storage (constants -&gt; program code); 5) Non-RAM storage (streamed objects &amp; persistent objects).</li>
+<li>Special case: primitive types. For primitive types,  instead of creating the variable by using new, an “automatic” variable is created that is not a reference. The variable holds the value directly, and it’s placed on the <strong>stack</strong>, so it’s much more efficient.</li>
+<li>The size of each primitive type</li>
+<li>When you create an array of objects, you are really creating an array of references, and each of those references is automatically initialized to a special value with its own keyword: <code>null</code>. When Java sees <code>null</code>, it recognizes that the reference in question isn’t pointing to an object.</li>
+<li>You can also create an array of primitives. Again, the compiler guarantees initialization because it zeroes the memory for that array.</li>
+</ul>
 </li>
+<li><strong>Fields and methods</strong><ul>
+<li>Default values for primitive members: The default values are only what Java guarantees when the variable is used as a member of a class. It’s best to always explicitly initialize your variables.</li>
+<li>This guarantee doesn’t apply to local variables—those that are not fields of a class. </li>
+</ul>
+</li>
+<li><strong>Comments and embedded documention</strong><ul>
+<li>All of the Javadoc commands occur only within <code>/**</code> comments. The comments end with <code>*/</code> as usual.</li>
+<li>Note that Javadoc will process comment documentation for only public and protected members. </li>
+</ul>
+</li>
+</ul>
+<p>Contents:</p>
+<ul>
+<li>You manipulate objects with references  引用</li>
+<li>You must create all objects<ul>
+<li>Where storage lives</li>
+<li>Special case: primitive types</li>
+<li>Arrays in Java</li>
+</ul>
+</li>
+<li>You never need to destroy an object<ul>
+<li>Scoping</li>
+<li>Scope of objects</li>
+</ul>
+</li>
+<li>Creating new date types: <code>class</code><ul>
+<li>Fields and methods</li>
+</ul>
+</li>
+<li>Methods, arguments, and return values<ul>
+<li>The argument list</li>
+</ul>
+</li>
+<li>Building a Java program<ul>
+<li>Name visibility</li>
+<li>Using other components</li>
+<li>The static keyword</li>
+</ul>
+</li>
+<li>Your first Java program<ul>
+<li>Compiling and running</li>
+</ul>
+</li>
+<li>Comments and embedded documentation<ul>
+<li>Comment documentation</li>
+<li>Syntax</li>
+<li>Embedded HTML</li>
+<li>Some example tags</li>
+<li>Documentation example</li>
+</ul>
+</li>
+<li>Coding style</li>
+<li>Summary</li>
+<li>Exercises</li>
+</ul>
+</li>
+<li>Operators</li>
 <li>Controlling Execution</li>
 <li>Initialization &amp; Cleanup</li>
 <li>Access Control</li>
