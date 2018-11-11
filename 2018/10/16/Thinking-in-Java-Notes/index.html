@@ -1,25 +1,22 @@
 <!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>Thinking in Java Notes | Qiaoyu Lu</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">Thinking in Java Notes</h1><a id="logo" href="/.">Qiaoyu Lu</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">Thinking in Java Notes</h1><div class="post-meta">Oct 16, 2018<script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script><span id="busuanzi_container_page_pv"> | <span id="busuanzi_value_page_pv"></span><span> Hits</span></span></div><div class="post-content"><p>Thinking in Java 4th Edition Notes</p>
 <a id="more"></a>
-<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><ol>
-<li><p>Introduction</p>
-<p>主要介绍了这本书的受众，这本书组织内容和组织方式的初衷，用于教学的建议和相关资料。不太重要。</p>
-<p>Keys:</p>
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><h2 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h2><p>   主要介绍了这本书的受众，这本书组织内容和组织方式的初衷，用于教学的建议和相关资料。不太重要。</p>
+<p>   Keys:</p>
 <ul>
 <li><code>Java</code>从<code>C/C++</code>继承而来</li>
 <li>The <strong>introductory portion</strong> ends with the Error Handling with Exceptions chapter, but you may also want to supplement this with an introduction to JDBC, Servlets and JSPs. </li>
 <li>[Coding Standards] Because Java is a <strong>free-form programming language</strong>, you can continue to use whatever style you’re comfortable with.</li>
-<li>This book focuses on and is tested with Java SE5/6. </li>
-</ul>
+<li><p>This book focuses on and is tested with Java SE5/6. </p>
 <p>Others:</p>
+</li>
+</ul>
 <ul>
 <li>experiment and iteration is a technique that works well in both presentation and program design</li>
 <li>introductory seminar: <a href="http://www.MindView.net" target="_blank" rel="noopener">www.MindView.net</a></li>
 <li>To take an example from C, if you memorize the operator precedence table (I never did), you can write clever code. But if you need to think about it, it will also confuse the reader/maintainer of that code. So forget about precedence, and use parentheses when things aren’t clear. </li>
 </ul>
-</li>
-<li><p>Introduction to Objects</p>
-<p>对象导论：介绍OOP的基本概念和Java在OOP方面做出的努力</p>
-<p>Keys:</p>
+<h2 id="2-Introduction-to-Objects"><a href="#2-Introduction-to-Objects" class="headerlink" title="2. Introduction to Objects"></a>2. Introduction to Objects</h2><p>   对象导论：介绍OOP的基本概念和Java在OOP方面做出的努力</p>
+<p>   Keys:</p>
 <ul>
 <li>In a good object-oriented design, each object does one thing well, but doesn’t try to do too much. (-&gt; high cohesion)</li>
 <li><code>public</code>: everyone; <code>private</code>: methods inside class; <code>protected</code>: methods inside class and inheriting class; default/package: inside the same package.</li>
@@ -70,9 +67,10 @@
 </ul>
 </li>
 <li>You know what a procedural program looks like: data definitions and function calls.</li>
-<li>OOP and Java may not be for everyone. </li>
-</ul>
+<li><p>OOP and Java may not be for everyone. </p>
 <p>Contents:</p>
+</li>
+</ul>
 <ul>
 <li>The progress of abstraction</li>
 <li>An object has an interface</li>
@@ -93,10 +91,8 @@
 <li>Java and the Internet</li>
 <li>Summary</li>
 </ul>
-</li>
-<li><p>Everything Is an Object</p>
-<p>一切都是对象：Overview of the language and some of its basic ideas</p>
-<p>Keys:</p>
+<h2 id="3-Everything-Is-an-Object"><a href="#3-Everything-Is-an-Object" class="headerlink" title="3. Everything Is an Object"></a>3. Everything Is an Object</h2><p>   一切都是对象：Overview of the language and some of its basic ideas</p>
+<p>   Keys:</p>
 <ul>
 <li><strong>You manipulate objects with references</strong><ul>
 <li>In Java, you treat everything as an object, using a single consistent syntax. Although you treat everything as an object, the identifier you manipulate is actually a “reference” to an object.</li>
@@ -116,13 +112,14 @@
 <li>This guarantee doesn’t apply to local variables—those that are not fields of a class. </li>
 </ul>
 </li>
-<li><strong>Comments and embedded documention</strong><ul>
+<li><p><strong>Comments and embedded documention</strong></p>
+<ul>
 <li>All of the Javadoc commands occur only within <code>/**</code> comments. The comments end with <code>*/</code> as usual.</li>
 <li>Note that Javadoc will process comment documentation for only public and protected members. </li>
 </ul>
+<p>Contents:</p>
 </li>
 </ul>
-<p>Contents:</p>
 <ul>
 <li>You manipulate objects with references  引用</li>
 <li>You must create all objects<ul>
@@ -166,19 +163,34 @@
 <li>Summary</li>
 <li>Exercises</li>
 </ul>
-</li>
-<li><p>Operators</p>
-<p>操作符：</p>
-<p>Keys:</p>
+<h2 id="4-Operators"><a href="#4-Operators" class="headerlink" title="4. Operators"></a>4. Operators</h2><p>   操作符：</p>
+<p>   Keys:</p>
 <ul>
-<li>assignment operator (<code>=</code>), mathematical operators (<code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, <code>%</code>), unary minus and plus, auto incement and decrement (<code>++</code>, <code>--</code>), relational operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>), logical operators (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>)</li>
+<li>Operators:<ul>
+<li>assignment operator (<code>=</code>), </li>
+<li>mathematical operators (<code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, <code>%</code>), </li>
+<li>unary minus and plus, </li>
+<li>auto incement and decrement (<code>++</code>, <code>--</code>), </li>
+<li>relational operators (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>), </li>
+<li>logical operators (<code>&amp;&amp;</code>, <code>||</code>, <code>!</code>), literals (<code>f</code>/<code>F</code>, <code>d</code>/<code>D</code>, <code>l</code>/<code>L</code>, <code>e</code>), </li>
+<li>bitwise operators (<code>&amp;</code>, <code>|</code>, <code>^</code>, <code>~</code>, <code>&amp;=</code>, <code>|=</code>, <code>^=</code>), </li>
+<li>shift operators (<code>&lt;&lt;</code>, <code>&gt;&gt;</code>, <code>&gt;&gt;&gt;</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>, <code>&gt;&gt;&gt;=</code>)</li>
+<li>ternary <code>if-else</code> operator (<code>?:</code>)</li>
+<li><code>String</code> operator <code>+</code> and <code>+=</code></li>
+</ul>
+</li>
 <li>Almost all operators work only with primitives. The exceptions are <code>=</code>, <code>==</code> and <code>!=</code>, which work with all objects (and are a point of confusion for objects). In addition, the <code>String</code> class supports <code>+</code> and <code>+=</code>.</li>
 <li>Since the primitive holds the actual value and not a reference to an object, when you assign primitives, you copy the contents from one place to another.</li>
 <li>The operators <code>==</code> and <code>!=</code> compare object references. To compare the actual contents of an object for equivalence, you must use the special method <code>equals( )</code> that exists for all objects (not primitives, which work fine with <code>==</code> and <code>!=</code>).</li>
 <li>You can apply AND, OR, or NOT to boolean values only. You can’t use a non-boolean as if it were a boolean in a logical expression as you can in C and C++.</li>
-<li>There is no literal representation for binary numbers in C, C++, or Java.</li>
-</ul>
+<li>There is no literal representation for binary numbers in C, C++, or Java. (<code>Integer.toBinaryString()</code>)</li>
+<li>the compiler normally takes exponential numbers as doubles, so without the trailing <code>f</code>, it will give you an error telling you that you must use a cast to convert <code>double</code> to <code>float</code>.<pre><code>float f4 = 1e-43f;
+</code></pre></li>
+<li>The boolean type is treated as a one-bit value, so it is somewhat different. You can perform a bitwise AND, OR, and XOR, but you can’t perform a bitwise NOT (<code>~</code>) (presumably to prevent confusion with the logical NOT (<code>!</code>)).</li>
+<li><p>If you shift a <code>char</code>, <code>byte</code>, or <code>short</code>, it will be promoted to <code>int</code> before the shift takes place, and the result will be an <code>int</code>.</p>
 <p>Contents</p>
+</li>
+</ul>
 <ul>
 <li>Simpler print statements</li>
 <li>Using Java operators</li>
@@ -217,7 +229,11 @@
 <li>A compendium of operators</li>
 <li>Summary</li>
 </ul>
-</li>
+<ol>
+<li>Introduction</li>
+<li>Introduction to Objects</li>
+<li>Everything Is an object</li>
+<li>Operators</li>
 <li>Controlling Execution</li>
 <li>Initialization &amp; Cleanup</li>
 <li>Access Control</li>
